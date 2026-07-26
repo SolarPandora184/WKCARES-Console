@@ -1,0 +1,48 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "users": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth != null && (auth.uid === $uid || root.child('users').child(auth.uid).child('role').val() === 'admin')"
+      }
+    },
+
+    "invitations": {
+      ".read": "auth == null || root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      "$code": {
+        ".write": "auth == null || root.child('users').child(auth.uid).child('role').val() === 'admin'"
+      }
+    },
+
+    "staff": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+    },
+
+    "areas": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+    },
+
+    "bands": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'"
+    },
+
+    "nets": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+
+    "auditLog": {
+      ".read": "auth != null && root.child('users').child(auth.uid).child('role').val() === 'admin'",
+      ".write": "auth != null",
+      "$entry": {
+        ".validate": "!data.exists()"
+      }
+    }
+  }
+}

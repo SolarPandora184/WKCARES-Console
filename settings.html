@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Settings — WKCARES Console</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="css/pages/settings.css" />
+</head>
+<body>
+<div id="app-shell"></div>
+
+<main class="main-content">
+  <div class="main-content__inner" style="max-width:640px;">
+
+    <h1 style="margin-bottom:20px;">Settings</h1>
+
+    <div class="card settings-section">
+      <div class="card__title">Display</div>
+
+      <div class="settings-row">
+        <div>
+          <div class="settings-row__label">Show live clock in top bar</div>
+          <div class="settings-row__desc">Displays the current time in the top-right corner on every page.</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="show-clock-toggle" checked />
+          <span class="toggle__track"></span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script type="module" src="js/pages/settings.js"></script>
+</body>
+</html>

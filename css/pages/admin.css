@@ -1,0 +1,252 @@
+/* css/pages/admin.css */
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.admin-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-tab .material-icons {
+  font-size: 18px;
+}
+
+.admin-tab:hover {
+  color: var(--color-text);
+}
+
+.admin-tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.admin-panel {
+  display: none;
+}
+
+.admin-panel--active {
+  display: block;
+}
+
+/* Toolbar above tables */
+
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.admin-toolbar__search {
+  position: relative;
+  min-width: 220px;
+  flex: 1;
+  max-width: 320px;
+}
+
+.admin-toolbar__search .material-icons {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.admin-toolbar__search input {
+  width: 100%;
+  padding: 8px 10px 8px 34px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.admin-toolbar__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Row-level action groups inside data tables */
+
+.row-actions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.data-table select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 6px;
+  font: inherit;
+  font-size: 0.85rem;
+  background: var(--color-surface);
+}
+
+.data-table td.is-muted-row {
+  opacity: 0.55;
+}
+
+/* Roles reference cards */
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.role-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.role-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.role-card__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.role-note {
+  background: #fbf1e0;
+  color: #7a5716;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 0.84rem;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.role-note .material-icons {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Backups panel */
+
+.backup-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.backup-status {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* Save bar under editable roster/area/band sections */
+
+.admin-savebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-savebar__status {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.audit-details {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 420px;
+}
+
+.section-subhead {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 18px 0 10px;
+}
+
+.section-subhead:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .admin-toolbar__search {
+    max-width: none;
+  }
+}
+
+/* Form Layout tab — reorderable list of net-form cards */
+
+.form-layout-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+  font-size: 0.88rem;
+  background: var(--color-surface);
+}
+
+.form-layout-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Small inline forms (e.g. "add a script section to the form") */
+
+.inline-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.inline-form .field {
+  margin: 0;
+  min-width: 220px;
+}
